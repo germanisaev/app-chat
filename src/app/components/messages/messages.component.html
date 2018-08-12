@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="chat-massages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <ul>
+      <li *ngFor="let msg of messages; let i=index">
+        <div class="block-message">
+          <div><i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{msg.username}}</div>
+          <div>{{msg.sentdate | date: 'dd/mm/yyyy hh:mm'}}: {{msg.comment}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

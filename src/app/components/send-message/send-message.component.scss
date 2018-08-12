@@ -1,0 +1,17 @@
+.input-group { 
+    border-bottom: 1px solid #999; 
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.form-control {
+    border-top-left-radius: 0;
+}
+.btn-primary {
+    border-top-right-radius: 0;
+    width: 100%;
+    padding: 5px 25px;
+    text-align: center;
+}
+.comment-control { border: none; padding: 5px 10px; width: 90%; }
