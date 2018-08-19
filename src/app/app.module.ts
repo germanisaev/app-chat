@@ -10,6 +10,12 @@ import { ContentComponent } from './components/content/content.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { SendMessageComponent } from './components/send-message/send-message.component';
 import { MessagesService } from './services/messages.service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { AuthService } from './shared/auth.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +25,17 @@ import { MessagesService } from './services/messages.service';
     MenuComponent,
     ContentComponent,
     MessagesComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'chat-dev'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [MessagesService],
+  providers: [MessagesService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

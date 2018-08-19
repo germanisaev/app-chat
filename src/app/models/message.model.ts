@@ -1,6 +1,6 @@
 export class Message {
     id: number;
     comment: string;
-    sentdate: Date;
+    sentdate: Date | number;
     username: string;
 }

@@ -22,7 +22,11 @@ export class MessagesComponent implements OnInit {
   }
 
   loadMessages() {
-    this.messages = this.messagesService.getMessage();
+    this.messagesService.getMessage().subscribe( res => {
+      this.messages = res;
+    });
+
+    console.log(this.messages);
   }
 
   addMessage(message: Message) {
