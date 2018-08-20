@@ -1,9 +1,5 @@
 .input-group { 
-    border-bottom: 1px solid #999; 
-    border-left: 1px solid #999;
-    border-right: 1px solid #999;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+   border: 0.02em solid #ddd; 
 }
 .form-control {
     border-top-left-radius: 0;
@@ -15,3 +11,6 @@
     text-align: center;
 }
 .comment-control { border: none; padding: 5px 10px; width: 90%; }
+.input-group-btn { border-left: 0.05em solid #eee; }
+.input-group-btn div { text-align: center; padding: 5px 25px; }
+.input-group-btn div i { color: #ccc; text-align: center; }

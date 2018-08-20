@@ -14,10 +14,12 @@ $f-family: Arial;
 /********************/
 html, body * { padding: 0; margin: 0; font-family: $f-family; }
 main { float: left; width: 70%; }
+.wrapper { display: block; width: 60%; margin: 0 auto; }
 aside { float: left; width: 30%; }
 header, footer { background: $bg-color; }
 h1, i, p { color: $f-color; }
 ul { list-style: none; }
+hr { margin: 15px 0; }
 /********************/
 .jumbotron { background: transparent; }
 
@@ -76,11 +78,66 @@ ul { list-style: none; }
     transform: translateX(50%);
 }
 
+/*************** Style scrollbar for all browsers *************/
+::-webkit-scrollbar {
+    width: 2px;
+    background:lightgray;
+  }
+
+  ::-webkit-scrollbar:hover {
+      width:6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #c4c4c4;
+       -moz-box-shadow: inset 0 0 6px #c4c4c4;
+        -ms-box-shadow: inset 0 0 6px #c4c4c4;
+         -o-box-shadow: inset 0 0 6px #c4c4c4;
+            box-shadow: inset 0 0 6px #c4c4c4;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+         -o-border-radius: 5px;
+            border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+         -o-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+       -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -ms-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+         -o-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    background:#c4c4c4;
+  } 
+  
+  /**************************************************************/
+
 
 @media (max-width: 768px) {
-    /* 80px and its content aligned to centre. Pushing it off the screen with the
+    /* 
+       80px and its content aligned to centre. Pushing it off the screen with the
        negative left margin
     */
+    .wrapper {
+        width:100%;
+        clear: both;
+    }
+    .input-group-btn { display: none; }
+    .input-group { width: 100%; }
+    .chat-img { width: 24%; }
+    .chat-date, .chat-ib { width: 75% !important; margin-left: 24% !important; }
+    .chat-ib { margin-top: -20px !important; }
+    .chat-ib::after {
+        content: '';
+        top: 0;
+        margin-top: 0 !important;
+        margin-left: 0;
+    }
     #sidebar.active {
         min-width: 80px;
         max-width: 80px;

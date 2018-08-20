@@ -1,5 +1,31 @@
 <div class="container">
-  <!--
+  <div class="chat-header">
+    <div class="pull-left"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></div>
+    <h3>CHAT</h3>
+    <div class="pull-right"></div>
+  </div>
+  <div class="inbox-chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+
+    <ul>
+      <li class="chat-list" *ngFor="let msg of messages; let i=index">
+        <div class="chat-people">
+          <div class="chat-img">
+            <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+          </div>
+          <div class="chat-ib">
+            <h5>{{msg.username}}</h5>
+            <hr>
+            <p *ngIf='msg.sentdate'>{{msg.comment}}</p>
+          </div>
+          <span class="chat-date">{{msg.sentdate | date: 'hh:mm a'}} | {{msg.sentdate | date: 'MMM yy'}}</span>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<!--
   <div>
     <ul>
       <li class="text" *ngFor="let topic of topics | async">
@@ -8,15 +34,3 @@
     </ul>
   </div>
   -->
-  <div class="chat-massages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-    <ul>
-      <li *ngFor="let msg of messages; let i=index">
-        <div class="block-message">
-          <div>
-            <i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{msg.username}}</div>
-          <div *ngIf='msg.sentdate'>{{msg.sentdate | date: 'dd/MM/yyyy hh:mm'}}: {{msg.comment}}</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>

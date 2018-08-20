@@ -1,8 +1,11 @@
 <div class="container">
   <div class="input-group mb-3">
-    <input type="text" (keyup.enter)="send(message)" class="comment-control" #message placeholder="Input message" aria-label="Input message" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <span class="btn-primary" id="basic-addon2" (click)="send(message)">send</span>
-    </div>
+    <input type="text" (keyup.enter)="send(message)" class="comment-control" #message placeholder="Input message" aria-label="Input message"
+      aria-describedby="basic-addon2">
+    <span class="input-group-btn">
+      <div id="basic-addon2" (click)="send(message)">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </div>
+    </span>
   </div>
 </div>
