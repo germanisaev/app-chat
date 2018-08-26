@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../../services/messages.service';
-import { Message } from '../../models/message.model';
+import { Message, Group } from '../../models/model-index';
 import { AuthService } from '../../shared/auth.service';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
@@ -41,7 +41,12 @@ export class SendMessageComponent implements OnInit {
         id: (new Date()).getTime(),
         comment: comment.value,
         sentdate: new Date(),
-        username: "german"
+        username: "german",
+        group: {
+          id: 1,
+          manager: 'german',
+          name: 'the man'
+        }
       }
       comment.value = '';
       this.messagesService.setMessage(this.message);
